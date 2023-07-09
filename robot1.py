@@ -1,19 +1,19 @@
 import lgpio # import RPi.GPIO module  
 from time import sleep             # lets us have a delay  
 
-leftForward = 29
-rightForward = 31
-leftBackward = 33
-rightBackward = 35
+leftForward = 1
+rightForward = 0
+leftBackward = 2
+rightBackward = 3   
 
 h = lgpio.gpiochip_open(0)
 
 
 def setup():
-    lgpio.tx_pwm(h, 12, 400, 70)
-    lgpio.tx_pwm(h, 11, 400, 70)
-    lgpio.tx_pwm(h, 13, 400, 70)
-    lgpio.tx_pwm(h, 15, 400, 70)
+    lgpio.tx_pwm(h, 21, 400, 70)
+    lgpio.tx_pwm(h, 22, 400, 70)
+    lgpio.tx_pwm(h, 23, 400, 70)
+    lgpio.tx_pwm(h, 24, 400, 70)
     
 
 def loop():
