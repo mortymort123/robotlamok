@@ -19,6 +19,7 @@ def setup():
 def loop():
     try:  
         while True:  
+            print("loop")
             moveForward(1)
             sleep(1)
             moveForward(0)
