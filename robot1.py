@@ -10,12 +10,11 @@ h = lgpio.gpiochip_open(0)
 
 
 def setup():
-    lgpio.tx_pwm(h, 21, 400, 70)
-    lgpio.tx_pwm(h, 22, 400, 70)
-    lgpio.tx_pwm(h, 23, 400, 70)
-    lgpio.tx_pwm(h, 24, 400, 70)
+    lgpio.tx_pwm(h, 21, 400, 100)
+    lgpio.tx_pwm(h, 22, 400, 100)
+    lgpio.tx_pwm(h, 23, 400, 100)
+    lgpio.tx_pwm(h, 24, 400, 100)
     
-
 def loop():
     try:  
         while True:  
@@ -39,6 +38,7 @@ def loop():
                      # wait half a second  
     except KeyboardInterrupt:          # trap a CTRL+C keyboard interrupt  
         lgpio.gpiochip_close(h)
+        print("interrupted")
 
 def moveForward(move):
     lgpio.gpio_write(h,leftForward,move)
